@@ -1,0 +1,64 @@
+@keyframes ldio-hx6vgwssawn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.preloader-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ldio-hx6vgwssawn > div {
+  animation: ldio-hx6vgwssawn 1s infinite linear;
+  transform-origin: 100px 100px;
+}
+.ldio-hx6vgwssawn > div div {
+  position: absolute;
+}
+.ldio-hx6vgwssawn > div div:nth-child(1),
+.ldio-hx6vgwssawn > div div:nth-child(2) {
+  width: 114px;
+  height: 114px;
+  border: 6px solid;
+  border-radius: 50%;
+  border-color: transparent #1d3f72 #1d3f72 #1d3f72;
+  box-sizing: border-box;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: 100px 100px;
+}
+.ldio-hx6vgwssawn > div div:nth-child(1) {
+  transform: rotate(45deg) translate(43px, 43px);
+}
+.ldio-hx6vgwssawn > div div:nth-child(2) {
+  transform: rotate(22.5deg) translate(43px, 43px);
+}
+.ldio-hx6vgwssawn > div div:nth-child(3) {
+  width: 0;
+  height: 0;
+  border: 16px solid;
+  border-color: transparent transparent transparent #1d3f72;
+  transform: translate(100px, 35px);
+}
+.loadingio-spinner-reload-zi9nxy6ou5 {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio-hx6vgwssawn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-hx6vgwssawn div {
+  box-sizing: content-box;
+}
