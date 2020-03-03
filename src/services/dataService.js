@@ -1,4 +1,4 @@
-class dataService {
+class DataService {
   _apiBase = "http://localhost:3000";
   getData = async url => {
     const res = await fetch(`${this._apiBase}${url}`);
@@ -19,4 +19,4 @@ class dataService {
   };
 }
 
-export default dataService;
+export default DataService;

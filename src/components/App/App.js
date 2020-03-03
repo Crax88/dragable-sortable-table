@@ -1,19 +1,17 @@
 import React from "react";
-import dataService from "../../services/dataService";
-import { DataServiceProvider } from "../dataServiceContext/dataServiceContext";
-import BooksPage from "../pages/BooksPage";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import Header from "../Header/Header";
+import HomePage from "../pages/HomePage";
 
 import "./App.css";
 
 const App = () => {
-  const service = new dataService();
   return (
-    <ErrorBoundary>
-      <DataServiceProvider value={service}>
-        <BooksPage />
-      </DataServiceProvider>
-    </ErrorBoundary>
+    <>
+      <Header total={20} />
+      <main className="container">
+        <h1>Table</h1>
+      </main>
+    </>
   );
 };
 
