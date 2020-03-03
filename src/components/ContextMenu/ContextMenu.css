@@ -1,0 +1,30 @@
+.cMenu {
+  width: fit-content;
+  min-width: 100px;
+  height: fit-content;
+  background-color: lightblue;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 2px;
+  z-index: 10;
+}
+.cMenu button {
+  position: relative;
+  padding: 0.3em;
+  border: none;
+  background-color: inherit;
+  font-weight: bold;
+}
+.cMenu button:hover {
+  cursor: pointer;
+  background-color: teal;
+}
+.force-select {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}

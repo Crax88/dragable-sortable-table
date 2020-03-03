@@ -1,0 +1,30 @@
+.table-wrapper {
+  width: fit-content;
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 0 1rem 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+.table-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.dragged-over {
+  background-color: darkgray;
+}
+.indicator {
+  height: 2px;
+}
+.to-bottom {
+  position: absolute;
+  bottom: -1000px;
+}
