@@ -1,0 +1,9 @@
+.booklist-column {
+  display: grid;
+  grid-auto-rows: 1fr;
+  text-align: center;
+}
+
+.draggin {
+  background-color: thistle;
+}

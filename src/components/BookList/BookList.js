@@ -3,11 +3,25 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import DraggableColumn from "../DraggableColumn/DraggableColumn";
 
 import { connect } from "react-redux";
+import { reorderColumns } from "../../store/actions";
+
+import "./BookList.css";
 
 class BookList extends Component {
   handleDragEnd = result => {
-    console.log(result);
+    const { destination, source, draggableId, type } = result;
+    if (!destination) return;
+    if (
+      destination.droppable === source.droppable &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+    if (type === "column") {
+      this.props.reorderColumns(draggableId, destination.index);
+    }
   };
+
   render() {
     const { columnOrder, columns, books } = this.props;
     return (
@@ -37,9 +51,11 @@ class BookList extends Component {
                       title={column.title}
                       index={idx}
                       dragId={columnId}
+                      field={column.accessor}
                     />
                   );
                 })}
+                {provided.placeholder}
               </div>
             );
           }}
@@ -56,4 +72,10 @@ const mapStateToProps = ({ bookColumns: { columns, columnOrder } }) => {
   };
 };
 
-export default connect(mapStateToProps)(BookList);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     reorderColumn: (id, index) => dispatch(reorderColumns)
+//   }
+// }
+
+export default connect(mapStateToProps, { reorderColumns })(BookList);

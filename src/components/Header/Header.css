@@ -5,6 +5,8 @@ header {
   align-items: center;
   justify-content: space-evenly;
   color: rgb(100, 97, 97);
+  background-color: rgb(196, 196, 245);
+  margin-bottom: 1rem;
 }
 header h3 {
   font-size: 1.3rem;

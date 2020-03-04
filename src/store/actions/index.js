@@ -1,7 +1,9 @@
 import {
   FETCH_BOOKS_REQUEST,
   FETCH_BOOKS_SUCCESS,
-  FETCH_BOOKS_FAILURE
+  FETCH_BOOKS_FAILURE,
+  UPDATE_COLUMN_ORDER,
+  SORT_BOOKS
 } from "../actionTypes";
 
 const booksRequested = () => {
@@ -22,6 +24,19 @@ const booksError = error => {
     type: FETCH_BOOKS_FAILURE,
     payload: error
   };
+};
+
+export const reorderColumns = (id, index) => dispatch => {
+  dispatch({
+    type: UPDATE_COLUMN_ORDER,
+    payload: { id, index }
+  });
+};
+export const sortBooks = filed => dispatch => {
+  dispatch({
+    type: SORT_BOOKS,
+    payload: filed
+  });
 };
 
 export const fetchBooks = getBooks => (dispatch, getState) => {

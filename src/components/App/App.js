@@ -7,7 +7,7 @@ import "./App.css";
 const App = () => {
   return (
     <>
-      <Header total={20} />
+      <Header />
       <main className="container">
         <HomePage />
       </main>

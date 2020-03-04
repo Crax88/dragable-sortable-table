@@ -4,11 +4,15 @@ const updateColumnOrder = (state, reorderData) => {
   const {
     bookColumns: { columnOrder }
   } = state;
-  const { columnId, newIndex } = reorderData;
-  const columnIdx = columnOrder.findIndex(el => el === columnId);
+  const { id, index } = reorderData;
+  const columnIdx = columnOrder.findIndex(el => el === id);
   const newOrder = [...columnOrder];
   newOrder.splice(columnIdx, 1);
-  newOrder.splice(newIndex, 0, columnId);
+  newOrder.splice(index, 0, id);
+  return {
+    ...state.bookColumns,
+    columnOrder: newOrder
+  };
 };
 
 export const updateColumns = (state, action) => {

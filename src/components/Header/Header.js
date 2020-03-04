@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import "./Header.css";
 
 const Header = ({ total }) => {
@@ -9,5 +11,7 @@ const Header = ({ total }) => {
     </header>
   );
 };
-
-export default Header;
+const mapStateToProps = ({ bookList: { total } }) => {
+  return { total };
+};
+export default connect(mapStateToProps)(Header);
