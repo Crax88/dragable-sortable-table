@@ -4,6 +4,21 @@
   justify-content: center;
   position: sticky;
   top: 0;
+  padding: 0.2em;
   background-color: whitesmoke;
   border-bottom: 1px solid black;
+}
+.column-header span {
+  margin-left: 0.3em;
+  font-size: 1.3rem;
+  color: rgb(43, 102, 230);
+}
+.column-header-title {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+.column-hide {
+  color: tomato !important;
+  cursor: pointer;
 }

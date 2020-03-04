@@ -14,3 +14,6 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
 }
+.observer-target {
+  width: 2px;
+}

@@ -34,6 +34,7 @@ const DraggableColumn = ({
               title={title}
               dragHandleProps={[provided.dragHandleProps]}
               field={field}
+              columnId={dragId}
             />
             {items.map((item, idx) => (
               <ColumnItem key={idx} item={item} />

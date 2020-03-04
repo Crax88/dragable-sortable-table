@@ -3,7 +3,8 @@ import {
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_FAILURE,
   UPDATE_COLUMN_ORDER,
-  SORT_BOOKS
+  SORT_BOOKS,
+  HIDE_BOOKLIST_COLUMN
 } from "../actionTypes";
 
 const booksRequested = () => {
@@ -32,7 +33,16 @@ export const reorderColumns = (id, index) => dispatch => {
     payload: { id, index }
   });
 };
+
+export const hideColumn = columnId => dispatch => {
+  dispatch({
+    type: HIDE_BOOKLIST_COLUMN,
+    payload: columnId
+  });
+};
+
 export const sortBooks = filed => dispatch => {
+  console.log("gfgfdgfd");
   dispatch({
     type: SORT_BOOKS,
     payload: filed

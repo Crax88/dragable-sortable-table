@@ -8,16 +8,39 @@ import { connect } from "react-redux";
 import { fetchBooks } from "../../store/actions";
 
 class BooksListContainer extends Component {
+  observerTarget = null;
+  observerCallback = entries => {
+    entries.forEach(entrie => {
+      if (entrie.isIntersecting) {
+        this.props.fetchBooks();
+      }
+    });
+  };
+  obsever = new IntersectionObserver(this.observerCallback, {
+    root: document.querySelector(".table-wrapper"),
+    rootMargin: "200px"
+  });
   componentDidMount() {
     this.props.fetchBooks();
   }
+  componentDidUpdate() {
+    if (this.props.books.length) {
+      this.obsever.observe(this.observerTarget);
+    }
+  }
+  setObserverTarget = ref => {
+    this.observerTarget = ref;
+  };
+
   render() {
     const { isLoading, error, books } = this.props;
     const preloader = isLoading ? <Preloader /> : null;
     const errorIndicator = error ? <ErrorIndicator /> : null;
     return (
       <>
-        {books.length && <BookList books={books} />}
+        {books.length && (
+          <BookList setObserverTarget={this.setObserverTarget} books={books} />
+        )}
         {preloader}
         {errorIndicator}
       </>

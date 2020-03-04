@@ -23,7 +23,7 @@ class BookList extends Component {
   };
 
   render() {
-    const { columnOrder, columns, books } = this.props;
+    const { columnOrder, columns, books, setObserverTarget } = this.props;
     return (
       <DragDropContext onDragEnd={this.handleDragEnd}>
         <Droppable
@@ -44,6 +44,7 @@ class BookList extends Component {
                 {columnOrder.map((columnId, idx) => {
                   const column = columns[columnId];
                   const columnData = books.map(book => book[column.accessor]);
+                  if (column.hided) return null;
                   return (
                     <DraggableColumn
                       key={column.id}
@@ -56,6 +57,7 @@ class BookList extends Component {
                   );
                 })}
                 {provided.placeholder}
+                <div ref={ref => setObserverTarget(ref)}></div>
               </div>
             );
           }}

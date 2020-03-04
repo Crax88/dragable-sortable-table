@@ -1,6 +1,6 @@
 .booklist-wrapper {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   background-color: inherit;
   display: grid;
   grid-template-columns: repeat(9, 1fr);

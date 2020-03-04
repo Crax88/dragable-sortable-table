@@ -1,4 +1,4 @@
-import { UPDATE_COLUMN_ORDER } from "../actionTypes";
+import { UPDATE_COLUMN_ORDER, HIDE_BOOKLIST_COLUMN } from "../actionTypes";
 
 const updateColumnOrder = (state, reorderData) => {
   const {
@@ -15,6 +15,15 @@ const updateColumnOrder = (state, reorderData) => {
   };
 };
 
+const hideColumn = (state, columnId) => {
+  const column = state.bookColumns.columns[columnId];
+  column.hided = true;
+  return {
+    ...state.bookColumns,
+    columns: { ...state.bookColumns.columns, [columnId]: column }
+  };
+};
+
 export const updateColumns = (state, action) => {
   if (state === undefined) {
     return {
@@ -22,47 +31,56 @@ export const updateColumns = (state, action) => {
         "column-1": {
           id: "column-1",
           title: "id",
-          accessor: "id"
+          accessor: "id",
+          hided: false
         },
         "column-2": {
           id: "column-2",
           title: "Author",
-          accessor: "author"
+          accessor: "author",
+          hided: false
         },
         "column-3": {
           id: "column-3",
           title: "Country",
-          accessor: "country"
+          accessor: "country",
+          hided: false
         },
         "column-4": {
           id: "column-4",
           title: "Image link",
-          accessor: "imageLink"
+          accessor: "imageLink",
+          hided: false
         },
         "column-5": {
           id: "column-5",
           title: "Language",
-          accessor: "language"
+          accessor: "language",
+          hided: false
         },
         "column-6": {
           id: "column-6",
           title: "Wiki link",
-          accessor: "link"
+          accessor: "link",
+          hided: false
         },
         "column-7": {
           id: "column-7",
           title: "Pages",
-          accessor: "pages"
+          accessor: "pages",
+          hided: false
         },
         "column-8": {
           id: "column-8",
           title: "Title",
-          accessor: "title"
+          accessor: "title",
+          hided: false
         },
         "column-9": {
           id: "column-9",
           title: "Year",
-          accessor: "year"
+          accessor: "year",
+          hided: false
         }
       },
       columnOrder: [
@@ -81,6 +99,8 @@ export const updateColumns = (state, action) => {
   switch (action.type) {
     case UPDATE_COLUMN_ORDER:
       return updateColumnOrder(state, action.payload);
+    case HIDE_BOOKLIST_COLUMN:
+      return hideColumn(state, action.payload);
     default:
       return state.bookColumns;
   }
