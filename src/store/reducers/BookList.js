@@ -8,6 +8,8 @@ export const updateBookList = (state, action) => {
   if (state === undefined) {
     return {
       books: [],
+      curPage: 1,
+      pageSize: 20,
       isLoading: false,
       error: false
     };
@@ -15,19 +17,20 @@ export const updateBookList = (state, action) => {
   switch (action.type) {
     case FETCH_BOOKS_REQUEST:
       return {
-        books: [],
-        isLoading: true,
-        error: false
+        ...state.bookList,
+        isLoading: true
       };
     case FETCH_BOOKS_SUCCESS:
       return {
-        books: [...state.bookList.book, ...action.payload],
+        books: [...state.bookList.books, ...action.payload],
+        curPage: state.bookList.curPage + 1,
+        pageSize: 20,
         isLoading: false,
         error: false
       };
     case FETCH_BOOKS_FAILURE:
       return {
-        books: [],
+        ...state.bookList,
         isLoading: false,
         error: action.payload
       };

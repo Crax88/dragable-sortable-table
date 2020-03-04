@@ -1,7 +1,7 @@
 import React from "react";
 import { DataServiceConsumer } from "../dataServiceContext/dataServiceContext";
 
-const withDataService = mapServiceMethodsToProps => Wrapped => {
+const WithDataService = mapServiceMethodsToProps => Wrapped => {
   return props => {
     return (
       <DataServiceConsumer>
@@ -13,4 +13,4 @@ const withDataService = mapServiceMethodsToProps => Wrapped => {
     );
   };
 };
-export default withDataService;
+export default WithDataService;

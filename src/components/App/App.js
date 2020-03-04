@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Header total={20} />
       <main className="container">
-        <h1>Table</h1>
+        <HomePage />
       </main>
     </>
   );

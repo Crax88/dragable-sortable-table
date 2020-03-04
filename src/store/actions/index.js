@@ -24,10 +24,11 @@ const booksError = error => {
   };
 };
 
-const fetchBooks = dataService => () => dispatch => {
+export const fetchBooks = getBooks => (dispatch, getState) => {
+  const page = getState().bookList.curPage;
+  const size = getState().bookList.pageSize;
   dispatch(booksRequested());
-  dataService
-    .getBooks()
+  getBooks(page, size)
     .then(data => dispatch(booksLoaded(data)))
     .catch(err => dispatch(booksError(err)));
 };
