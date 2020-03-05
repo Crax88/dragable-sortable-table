@@ -3,6 +3,7 @@ import ErrorIndicator from "../ErrorBoundary/ErrorBoundary";
 import Preloader from "../Preloader/Preloader";
 import { WithDataService } from "../hocs/";
 import BookList from "../BookList/BookList";
+import ShowColumnWidget from "../ShowColumnWidget/ShowColumnWidget";
 
 import { connect } from "react-redux";
 import { fetchBooks } from "../../store/actions";
@@ -41,6 +42,7 @@ class BooksListContainer extends Component {
         {books.length && (
           <BookList setObserverTarget={this.setObserverTarget} books={books} />
         )}
+        <ShowColumnWidget />
         {preloader}
         {errorIndicator}
       </>

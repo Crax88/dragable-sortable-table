@@ -4,7 +4,7 @@ import {
   FETCH_BOOKS_FAILURE,
   UPDATE_COLUMN_ORDER,
   SORT_BOOKS,
-  HIDE_BOOKLIST_COLUMN
+  TOGGLE_COLUMN_VISIBILITY
 } from "../actionTypes";
 
 const booksRequested = () => {
@@ -34,15 +34,14 @@ export const reorderColumns = (id, index) => dispatch => {
   });
 };
 
-export const hideColumn = columnId => dispatch => {
+export const toggleColumnVisibility = columnId => dispatch => {
   dispatch({
-    type: HIDE_BOOKLIST_COLUMN,
+    type: TOGGLE_COLUMN_VISIBILITY,
     payload: columnId
   });
 };
 
 export const sortBooks = filed => dispatch => {
-  console.log("gfgfdgfd");
   dispatch({
     type: SORT_BOOKS,
     payload: filed

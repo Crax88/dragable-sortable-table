@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { sortBooks, hideColumn } from "../../store/actions";
+import { sortBooks, toggleColumnVisibility } from "../../store/actions";
 
 import "./ColumnHeader.css";
 
@@ -14,7 +14,7 @@ const ColumnHeader = props => {
     sortBooks,
     ascending,
     columnId,
-    hideColumn
+    toggleColumnVisibility
   } = props;
 
   const indicator =
@@ -30,7 +30,10 @@ const ColumnHeader = props => {
         {title}
       </span>
       {indicator}
-      <span onClick={e => hideColumn(columnId)} className="column-hide">
+      <span
+        onClick={e => toggleColumnVisibility(columnId)}
+        className="column-hide"
+      >
         &#x2612;
       </span>
     </h3>
@@ -44,6 +47,6 @@ const mapStateToProps = ({ bookList: { field, ascending } }) => {
   };
 };
 
-export default connect(mapStateToProps, { sortBooks, hideColumn })(
+export default connect(mapStateToProps, { sortBooks, toggleColumnVisibility })(
   ColumnHeader
 );

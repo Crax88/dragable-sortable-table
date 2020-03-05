@@ -1,0 +1,27 @@
+.widget {
+  position: absolute;
+  top: 5vh;
+  left: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(216, 191, 216, 0.904);
+  padding: 0.3em;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.widget span {
+  font-weight: bold;
+  color: navy;
+}
+.widget button {
+  width: 100%;
+  margin: 3px 0 3px 0;
+  background-color: teal;
+  padding: 0.1em;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

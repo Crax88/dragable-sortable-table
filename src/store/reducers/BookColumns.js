@@ -1,4 +1,4 @@
-import { UPDATE_COLUMN_ORDER, HIDE_BOOKLIST_COLUMN } from "../actionTypes";
+import { UPDATE_COLUMN_ORDER, TOGGLE_COLUMN_VISIBILITY } from "../actionTypes";
 
 const updateColumnOrder = (state, reorderData) => {
   const {
@@ -15,9 +15,9 @@ const updateColumnOrder = (state, reorderData) => {
   };
 };
 
-const hideColumn = (state, columnId) => {
+const toggleColumnVisibility = (state, columnId) => {
   const column = state.bookColumns.columns[columnId];
-  column.hided = true;
+  column.hided = !column.hided;
   return {
     ...state.bookColumns,
     columns: { ...state.bookColumns.columns, [columnId]: column }
@@ -99,8 +99,8 @@ export const updateColumns = (state, action) => {
   switch (action.type) {
     case UPDATE_COLUMN_ORDER:
       return updateColumnOrder(state, action.payload);
-    case HIDE_BOOKLIST_COLUMN:
-      return hideColumn(state, action.payload);
+    case TOGGLE_COLUMN_VISIBILITY:
+      return toggleColumnVisibility(state, action.payload);
     default:
       return state.bookColumns;
   }
