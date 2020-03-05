@@ -2,11 +2,11 @@
   "books": [
     {
       "id": 1,
-      "author": "Chinua Achebe",
+      "author": "Popov Pavel",
       "country": "Nigeria",
       "imageLink": "images/things-fall-apart.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+      "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
       "pages": 209,
       "title": "Things Fall Apart",
       "year": 1958
@@ -74,7 +74,7 @@
       "language": "Old Norse",
       "link": "https://en.wikipedia.org/wiki/Nj%C3%A1ls_saga\n",
       "pages": 384,
-      "title": "Nj\u00e1l's Saga",
+      "title": "Njál's Saga",
       "year": 1350
     },
     {
@@ -90,13 +90,13 @@
     },
     {
       "id": 9,
-      "author": "Honor\u00e9 de Balzac",
+      "author": "Honoré de Balzac",
       "country": "France",
       "imageLink": "images/le-pere-goriot.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Le_P%C3%A8re_Goriot\n",
       "pages": 443,
-      "title": "Le P\u00e8re Goriot",
+      "title": "Le Père Goriot",
       "year": 1835
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "id": 13,
-      "author": "Emily Bront\u00eb",
+      "author": "Emily Brontë",
       "country": "United Kingdom",
       "imageLink": "images/wuthering-heights.jpg",
       "language": "English",
@@ -167,7 +167,7 @@
     },
     {
       "id": 16,
-      "author": "Louis-Ferdinand C\u00e9line",
+      "author": "Louis-Ferdinand Céline",
       "country": "France",
       "imageLink": "images/voyage-au-bout-de-la-nuit.jpg",
       "language": "French",
@@ -244,7 +244,7 @@
     },
     {
       "id": 23,
-      "author": "Alfred D\u00f6blin",
+      "author": "Alfred Döblin",
       "country": "Germany",
       "imageLink": "images/berlin-alexanderplatz.jpg",
       "language": "German",
@@ -376,7 +376,7 @@
     },
     {
       "id": 35,
-      "author": "Federico Garc\u00eda Lorca",
+      "author": "Federico García Lorca",
       "country": "Spain",
       "imageLink": "images/gypsy-ballads.jpg",
       "language": "Spanish",
@@ -387,7 +387,7 @@
     },
     {
       "id": 36,
-      "author": "Gabriel Garc\u00eda M\u00e1rquez",
+      "author": "Gabriel García Márquez",
       "country": "Colombia",
       "imageLink": "images/one-hundred-years-of-solitude.jpg",
       "language": "Spanish",
@@ -398,7 +398,7 @@
     },
     {
       "id": 37,
-      "author": "Gabriel Garc\u00eda M\u00e1rquez",
+      "author": "Gabriel García Márquez",
       "country": "Colombia",
       "imageLink": "images/love-in-the-time-of-cholera.jpg",
       "language": "Spanish",
@@ -431,7 +431,7 @@
     },
     {
       "id": 40,
-      "author": "G\u00fcnter Grass",
+      "author": "Günter Grass",
       "country": "Germany",
       "imageLink": "images/the-tin-drum.jpg",
       "language": "German",
@@ -442,7 +442,7 @@
     },
     {
       "id": 41,
-      "author": "Jo\u00e3o Guimar\u00e3es Rosa",
+      "author": "João Guimarães Rosa",
       "country": "Brazil",
       "imageLink": "images/the-devil-to-pay-in-the-backlands.jpg",
       "language": "Portuguese",
@@ -552,7 +552,7 @@
     },
     {
       "id": 51,
-      "author": "K\u0101lid\u0101sa",
+      "author": "Kālidāsa",
       "country": "India",
       "imageLink": "images/the-recognition-of-shakuntala.jpg",
       "language": "Sanskrit",
@@ -596,7 +596,7 @@
     },
     {
       "id": 55,
-      "author": "Halld\u00f3r Laxness",
+      "author": "Halldór Laxness",
       "country": "Iceland",
       "imageLink": "images/independent-people.jpg",
       "language": "Icelandic",
