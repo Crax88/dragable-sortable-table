@@ -54,11 +54,12 @@ export const updateBookField = (bookId, field, data) => dispatch => {
     payload: { bookId, field, data }
   });
 };
-export const fetchBooks = getBooks => (dispatch, getState) => {
+export const fetchBooks = dataService => (dispatch, getState) => {
   const page = getState().bookList.curPage;
   const size = getState().bookList.pageSize;
   dispatch(booksRequested());
-  getBooks(page, size)
+  dataService
+    .getBooksByPage(page, size)
     .then(data => dispatch(booksLoaded(data)))
     .catch(err => dispatch(booksError(err)));
 };

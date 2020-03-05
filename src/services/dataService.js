@@ -19,14 +19,15 @@ class DataService {
   };
   updateBook = async (id, data) => {
     const book = await this.getData(`/books/${id}`);
-    const updatedBook = { ...book, ...data };
-    const res = await this.getData(`/books/${id}`, {
+    const newBook = { ...book, ...data };
+    const updatedBook = await this.getData(`/books/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(updatedBook)
+      body: JSON.stringify(newBook)
     });
+    return updatedBook;
   };
 }
 

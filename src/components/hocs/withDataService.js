@@ -1,13 +1,12 @@
 import React from "react";
 import { DataServiceConsumer } from "../dataServiceContext/dataServiceContext";
 
-const WithDataService = mapServiceMethodsToProps => Wrapped => {
+const WithDataService = Wrapped => {
   return props => {
     return (
       <DataServiceConsumer>
         {dataService => {
-          const serviceProps = mapServiceMethodsToProps(dataService);
-          return <Wrapped {...props} {...serviceProps} />;
+          return <Wrapped {...props} dataService={dataService} />;
         }}
       </DataServiceConsumer>
     );

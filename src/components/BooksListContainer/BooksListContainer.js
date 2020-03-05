@@ -58,22 +58,16 @@ class BooksListContainer extends Component {
   }
 }
 
-const mapServiceMethodsToProps = dataService => {
-  return {
-    loadBooks: dataService.getBooksByPage
-  };
-};
-
 const mapStateToProps = ({ bookList: { books, isLoading, error } }) => {
   return { books, isLoading, error };
 };
 
-const mapDispatchToProps = (dispatch, { loadBooks }) => {
+const mapDispatchToProps = (dispatch, { dataService }) => {
   return {
-    fetchBooks: () => dispatch(fetchBooks(loadBooks))
+    fetchBooks: () => dispatch(fetchBooks(dataService))
   };
 };
 
-export default WithDataService(mapServiceMethodsToProps)(
+export default WithDataService(
   connect(mapStateToProps, mapDispatchToProps)(BooksListContainer)
 );
