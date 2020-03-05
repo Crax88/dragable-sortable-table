@@ -12,10 +12,14 @@ class DataService {
     return data;
   };
   getBooksByPage = async (pageNumber, pageSize) => {
-    const data = await this.getData(
-      `/books?_page=${pageNumber}&_limit=${pageSize}`
-    );
-    return data;
+    try {
+      const data = await this.getData(
+        `/books?_page=${pageNumber}&_limit=${pageSize}`
+      );
+      return data;
+    } catch (err) {
+      return Promise.reject("err");
+    }
   };
   updateBook = async (id, data) => {
     const book = await this.getData(`/books/${id}`);

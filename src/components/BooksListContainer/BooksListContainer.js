@@ -19,8 +19,8 @@ class BooksListContainer extends Component {
     });
   };
   obsever = new IntersectionObserver(this.observerCallback, {
-    root: document.querySelector(".table-wrapper"),
-    rootMargin: "200px"
+    root: document.querySelector(".booklist-wrapper"),
+    rootMargin: "100px"
   });
   componentDidMount() {
     this.props.fetchBooks();
@@ -29,6 +29,7 @@ class BooksListContainer extends Component {
     if (this.props.books.length) {
       this.obsever.observe(this.observerTarget);
     }
+    return true;
   }
   setObserverTarget = ref => {
     this.observerTarget = ref;
@@ -47,10 +48,9 @@ class BooksListContainer extends Component {
               books={books}
             />
             <ContextMenu />
+            <ShowColumnWidget />
           </>
         )}
-
-        <ShowColumnWidget />
         {preloader}
         {errorIndicator}
       </>

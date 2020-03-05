@@ -59,7 +59,10 @@ class BookList extends Component {
                   );
                 })}
                 {provided.placeholder}
-                <div ref={ref => setObserverTarget(ref)}></div>
+                <div
+                  className="observer-target"
+                  ref={ref => setObserverTarget(ref)}
+                ></div>
               </div>
             );
           }}
