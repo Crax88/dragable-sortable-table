@@ -4,7 +4,8 @@ import {
   FETCH_BOOKS_FAILURE,
   UPDATE_COLUMN_ORDER,
   SORT_BOOKS,
-  TOGGLE_COLUMN_VISIBILITY
+  TOGGLE_COLUMN_VISIBILITY,
+  UPDATE_BOOK_FIELD
 } from "../actionTypes";
 
 const booksRequested = () => {
@@ -47,7 +48,12 @@ export const sortBooks = filed => dispatch => {
     payload: filed
   });
 };
-
+export const updateBookField = (bookId, field, data) => dispatch => {
+  dispatch({
+    type: UPDATE_BOOK_FIELD,
+    payload: { bookId, field, data }
+  });
+};
 export const fetchBooks = getBooks => (dispatch, getState) => {
   const page = getState().bookList.curPage;
   const size = getState().bookList.pageSize;

@@ -43,7 +43,9 @@ class BookList extends Component {
               >
                 {columnOrder.map((columnId, idx) => {
                   const column = columns[columnId];
-                  const columnData = books.map(book => book[column.accessor]);
+                  const columnData = books.map(book => {
+                    return { id: book.id, title: book[column.accessor] };
+                  });
                   if (column.hided) return null;
                   return (
                     <DraggableColumn

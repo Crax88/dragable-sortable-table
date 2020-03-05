@@ -3,21 +3,9 @@ import { Draggable } from "react-beautiful-dnd";
 import ColumnHeader from "../ColumnHeader/ColumnHeader";
 import ColumnItem from "../ColumnItem/ColumnItem";
 
-import { connect } from "react-redux";
-import { sortBooks } from "../../store/actions";
-
 import "./DraggableColumn.css";
 
-const DraggableColumn = ({
-  items,
-  title,
-  index,
-  dragId,
-  field,
-  sortBooks,
-  prop,
-  ascending
-}) => {
+const DraggableColumn = ({ items, title, index, dragId, field }) => {
   return (
     <Draggable index={index} draggableId={dragId}>
       {(provided, snapshot) => {
@@ -37,7 +25,7 @@ const DraggableColumn = ({
               columnId={dragId}
             />
             {items.map((item, idx) => (
-              <ColumnItem key={idx} item={item} />
+              <ColumnItem key={idx} item={item} field={field} />
             ))}
           </div>
         );
@@ -45,10 +33,5 @@ const DraggableColumn = ({
     </Draggable>
   );
 };
-const mapStateToProps = ({ bookList: { field, ascending } }) => {
-  return {
-    prop: field,
-    ascending
-  };
-};
-export default connect(mapStateToProps, { sortBooks })(DraggableColumn);
+
+export default DraggableColumn;

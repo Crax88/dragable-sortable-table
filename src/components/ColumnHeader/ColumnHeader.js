@@ -32,7 +32,8 @@ const ColumnHeader = props => {
       {indicator}
       <span
         onClick={e => toggleColumnVisibility(columnId)}
-        className="column-hide"
+        className="column-hide tool"
+        data-tool="hide column"
       >
         &#x2612;
       </span>

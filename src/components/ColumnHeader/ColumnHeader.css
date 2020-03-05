@@ -22,3 +22,24 @@
   color: tomato !important;
   cursor: pointer;
 }
+.tool {
+  position: relative;
+}
+.tool::before {
+  content: attr(data-tool);
+  position: absolute;
+  top: -100%;
+  left: -50%;
+  font-size: 12px;
+  border-bottom: 1px solid navy;
+  color: navy;
+  display: block;
+  opacity: 0;
+  z-index: -10;
+  transition: opacity 0.2s ease;
+}
+.tool:hover::before,
+.tool:focus::before {
+  opacity: 1;
+  z-index: 10;
+}

@@ -4,6 +4,7 @@ import Preloader from "../Preloader/Preloader";
 import { WithDataService } from "../hocs/";
 import BookList from "../BookList/BookList";
 import ShowColumnWidget from "../ShowColumnWidget/ShowColumnWidget";
+import ContextMenu from "../ContextMenu/ContextMenu";
 
 import { connect } from "react-redux";
 import { fetchBooks } from "../../store/actions";
@@ -40,8 +41,15 @@ class BooksListContainer extends Component {
     return (
       <>
         {books.length && (
-          <BookList setObserverTarget={this.setObserverTarget} books={books} />
+          <>
+            <BookList
+              setObserverTarget={this.setObserverTarget}
+              books={books}
+            />
+            <ContextMenu />
+          </>
         )}
+
         <ShowColumnWidget />
         {preloader}
         {errorIndicator}

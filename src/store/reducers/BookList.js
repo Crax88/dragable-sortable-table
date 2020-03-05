@@ -2,7 +2,8 @@ import {
   FETCH_BOOKS_REQUEST,
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_FAILURE,
-  SORT_BOOKS
+  SORT_BOOKS,
+  UPDATE_BOOK_FIELD
 } from "../actionTypes";
 
 const sortBooksItems = (books, ascending, field) => {
@@ -15,6 +16,16 @@ const sortBooksItems = (books, ascending, field) => {
       return a[field] > b[field] ? 1 : -1;
     }
     return b[field] > a[field] ? 1 : -1;
+  });
+};
+
+const updateBook = (books, props) => {
+  const { bookId, field, data } = props;
+  return [...books].map(book => {
+    if (book.id === +bookId) {
+      book[field] = data;
+    }
+    return book;
   });
 };
 
@@ -67,6 +78,12 @@ export const updateBookList = (state, action) => {
         books: sortBooksItems(books, ascending, action.payload),
         ascending: !ascending,
         field: action.payload
+      };
+    }
+    case UPDATE_BOOK_FIELD: {
+      return {
+        ...state.bookList,
+        books: updateBook(state.bookList.books, action.payload)
       };
     }
     default:
