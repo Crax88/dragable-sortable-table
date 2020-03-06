@@ -35,7 +35,7 @@ const ColumnHeader = props => {
         className="column-hide tool"
         data-tool="hide column"
       >
-        &#x2612;
+        ⇤
       </span>
     </h3>
   );

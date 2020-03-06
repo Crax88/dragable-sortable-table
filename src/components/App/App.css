@@ -5,9 +5,10 @@
 }
 body {
   width: 100vw;
-  font-size: 100%;
+  font-size: calc(1vh + 1vw);
   background-color: whitesmoke;
   overflow-x: hidden;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .container {
   width: 80%;

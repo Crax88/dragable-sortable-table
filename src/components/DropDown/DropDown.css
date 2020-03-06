@@ -1,0 +1,60 @@
+.dd-wrapper {
+  display: flex;
+  min-height: 20px;
+  max-height: 100%;
+  flex-wrap: wrap;
+  position: relative;
+}
+.dd-header {
+  width: 100%;
+  min-width: 100px;
+  padding: 0 0.2em;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.75) !important; */
+}
+
+.dd-header-title--bold {
+  font-weight: bold;
+}
+.dd-header__action {
+  cursor: pointer;
+}
+.dd-list {
+  position: absolute;
+  z-index: 100;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.75) !important;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+.dd-list li {
+  list-style-type: none;
+}
+button {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  font-size: 16px;
+  padding: 0.2em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  text-align: left;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ccc;
+}
+.green {
+  background-color: rgb(126, 252, 0);
+  font-weight: bold;
+}

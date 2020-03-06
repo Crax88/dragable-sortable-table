@@ -1,0 +1,26 @@
+header form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em;
+  font-weight: bold;
+  width: fit-content;
+}
+header form label input {
+  margin: 0 0.2em 0 0.2em;
+  height: 100%;
+  padding: 0.3em;
+  border: none;
+}
+header form span {
+  margin-right: 0.2em;
+}
+input[type="submit"] {
+  font-size: 1.5rem;
+  padding: 0 0.1em 0 0.1em;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 2px;
+  background-color: white;
+  margin-left: 0.2em;
+}
